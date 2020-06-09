@@ -11,7 +11,7 @@ import (
 
 func collector(masterURL, secret string) {
 	f := FindmeasureFunc()
-	ticker := time.NewTicker(1 * time.Second)
+	ticker := time.NewTicker(15 * time.Second)
 	quit := make(chan struct{})
 
 	temps := make([]int, 5)
