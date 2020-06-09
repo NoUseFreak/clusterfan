@@ -33,6 +33,7 @@ func master(secret string) {
 		}
 		c.Send()
 
+		log.Infof("Test %v", data)
 		store.Add(data[0], temp)
 		if speed, changed := fanCheck(store.Max()); changed {
 			log.Infof("Fanspeed to %d%%", speed)

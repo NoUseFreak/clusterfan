@@ -34,7 +34,7 @@ func collector(masterURL, secret string) {
 }
 
 func publishResult(url string, temp int, secret string) {
-	msg := fmt.Sprintf("%s %d", viper.GetString("nodeName"), strconv.Itoa(temp))
+	msg := fmt.Sprintf("%s %s", viper.GetString("nodeName"), strconv.Itoa(temp))
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(msg)))
 	req.Header.Set(secretHeader, secret)
 	client := &http.Client{}
