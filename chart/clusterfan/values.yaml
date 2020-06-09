@@ -4,7 +4,7 @@
 
 image:
   repository: nousefreak/clusterfan
-  tag: "0.0.7"
+  tag: "v0.0.1"
 
 pwm:
   hostname: "kmaster"

@@ -21,7 +21,7 @@ func collector(masterURL, secret string) {
 			temp := f()
 			temps = append(temps[1:], temp)
 			max := maxInSlice(temps)
-			log.Debugf("Temp %v with max %d", temps, max)
+			log.Infof("Temp %v with max %d", temps, max)
 			publishResult(masterURL, max, secret)
 
 		case <-quit:
