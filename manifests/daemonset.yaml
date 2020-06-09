@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: clusterfan-collector
+spec:
+  selector:
+    matchLabels:
+      name: clusterfan-collector
+  template:
+    metadata:
+      labels:
+        name: clusterfan-collector
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: clusterfan-collector
+        image: nousefreak/clusterfan:0.0.4
+        imagePullPolicy: Always
+        env:
+        - name: CLUSTERFAN_MASTERURL
+          value: http://clusterfan-master
+        resources:
+          limits:
+            memory: 20Mi
+            cpu: 50m
+          requests:
+            cpu: 30m
+            memory: 20Mi
+      terminationGracePeriodSeconds: 30
