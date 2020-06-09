@@ -19,6 +19,8 @@ func Run() {
 	viper.AutomaticEnv()
 	viper.ReadInConfig()
 
+	log.SetFormatter(&log.JSONFormatter{})
+
 	secret := viper.GetString("masterSecret")
 	if viper.GetBool("ismaster") {
 
