@@ -2,11 +2,13 @@ package clusterfan
 
 import (
 	"bytes"
+	"fmt"
 	"net/http"
 	"strconv"
 	"time"
 
 	log "github.com/sirupsen/logrus"
+	"github.com/spf13/viper"
 )
 
 func collector(masterURL, secret string) {
@@ -32,7 +34,8 @@ func collector(masterURL, secret string) {
 }
 
 func publishResult(url string, temp int, secret string) {
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(strconv.Itoa(temp))))
+	msg := fmt.Sprintf("%s %d", viper.GetString("nodeName"), strconv.Itoa(temp))
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(msg)))
 	req.Header.Set(secretHeader, secret)
 	client := &http.Client{}
 	_, err = client.Do(req)

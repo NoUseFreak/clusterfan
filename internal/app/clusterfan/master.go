@@ -2,6 +2,7 @@ package clusterfan
 
 import (
 	"strconv"
+	"strings"
 
 	"github.com/gofiber/fiber"
 	log "github.com/sirupsen/logrus"
@@ -23,9 +24,8 @@ func master(secret string) {
 			c.Send()
 			return
 		}
-		log.Debugf("%s from %s", c.Body(), c.IP())
-
-		temp, err := strconv.Atoi(c.Body())
+		data := strings.Split(c.Body(), " ")
+		temp, err := strconv.Atoi(data[1])
 		if err != nil {
 			c.Status(400)
 			c.Send()
@@ -33,7 +33,7 @@ func master(secret string) {
 		}
 		c.Send()
 
-		store.Add(c.IP(), temp)
+		store.Add(data[0], temp)
 		if speed, changed := fanCheck(store.Max()); changed {
 			log.Infof("Fanspeed to %d%%", speed)
 			pwm.SetSpeed(speed)

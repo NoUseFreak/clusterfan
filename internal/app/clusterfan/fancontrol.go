@@ -2,6 +2,7 @@ package clusterfan
 
 import (
 	"encoding/json"
+	"os"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
@@ -15,6 +16,8 @@ var speedMap map[int]int
 func Run() {
 	viper.SetDefault("port", "8080")
 	viper.SetDefault("speedMap", `{"32":100,"20":0}`)
+	hostname, _ := os.Hostname()
+	viper.SetDefault("nodeName", hostname)
 	viper.SetEnvPrefix("clusterfan")
 	viper.AutomaticEnv()
 	viper.ReadInConfig()
