@@ -9,5 +9,5 @@ require (
 	github.com/spf13/viper v1.7.0
 	github.com/ssimunic/gosensors v0.0.0-20170414000417-e7ab9a4e799b
 	github.com/stianeikeland/go-rpio v4.2.0+incompatible
-	github.com/stianeikeland/go-rpio/v4 v4.4.0
+	github.com/stianeikeland/go-rpio/v4 v4.5.1
 )
