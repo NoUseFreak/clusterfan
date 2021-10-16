@@ -3,11 +3,14 @@ module github.com/nousefreak/clusterfan
 go 1.14
 
 require (
-	barista.run v0.0.0-20200426202729-0866017ac812 // indirect
+	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gofiber/fiber v1.14.6
+	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/sirupsen/logrus v1.4.2
+	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/viper v1.7.0
-	github.com/ssimunic/gosensors v0.0.0-20170414000417-e7ab9a4e799b
 	github.com/stianeikeland/go-rpio v4.2.0+incompatible
-	github.com/stianeikeland/go-rpio/v4 v4.4.0
+	github.com/stretchr/testify v1.5.1 // indirect
+	github.com/valyala/fasthttp v1.29.0 // indirect
+	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
