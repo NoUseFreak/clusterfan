@@ -8,6 +8,7 @@ RUN go mod download
 COPY . ./
 RUN go build ./cmd/clusterfan
 
+
 FROM alpine
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup \
     && mkdir /data \
