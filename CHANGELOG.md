@@ -1,3 +1,10 @@
+## [0.1.3](https://github.com/NoUseFreak/clusterfan/compare/v0.1.2...v0.1.3) (2022-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/spf13/viper to v1.13.0 ([e00e25f](https://github.com/NoUseFreak/clusterfan/commit/e00e25fa8012380457efea662e09331bd984ebf4))
+
 ## [0.1.2](https://github.com/NoUseFreak/clusterfan/compare/v0.1.1...v0.1.2) (2022-07-20)
 
 
